@@ -1,0 +1,100 @@
+[gd_scene load_steps=11 format=3 uid="uid://umcfg228c50l"]
+
+[ext_resource type="Texture2D" uid="uid://bm7cltvomyyis" path="res://resources/overtrulant.png" id="1_4g5tv"]
+[ext_resource type="AudioStream" uid="uid://ur3x2huejk5v" path="res://resources/hitHurt (1).wav" id="2_3kxpu"]
+
+[sub_resource type="GDScript" id="GDScript_e513v"]
+script/source = "extends CharacterBody2D
+@onready var turret = $\"/root/MainGame/GameProperties/turret\"
+
+
+var speed = 250
+var enemyVelocity = Vector2()
+
+func _physics_process(delta):
+	var goPlayer = (turret.global_position - global_position).normalized()
+	enemyVelocity = goPlayer * speed
+	move_and_collide(enemyVelocity * delta)
+
+func kill_enemy():
+	queue_free()
+
+func _on_overtrulant_area_area_entered(area):
+	if area.name == \"turretArea\":
+		#print(\"enemy died from being touched\")
+		kill_enemy()
+	elif area.name == \"bulletArea\":
+		kill_enemy()
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdcq4"]
+atlas = ExtResource("1_4g5tv")
+region = Rect2(0, 0, 100, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8n7b"]
+atlas = ExtResource("1_4g5tv")
+region = Rect2(100, 0, 100, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yd5q"]
+atlas = ExtResource("1_4g5tv")
+region = Rect2(200, 0, 100, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3tsm"]
+atlas = ExtResource("1_4g5tv")
+region = Rect2(300, 0, 100, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swwu7"]
+atlas = ExtResource("1_4g5tv")
+region = Rect2(400, 0, 100, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wkkm0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdcq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8n7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yd5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3tsm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swwu7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ltc8a"]
+radius = 41.0
+height = 94.0
+
+[node name="ovatrulant" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = SubResource("GDScript_e513v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, 13)
+sprite_frames = SubResource("SpriteFrames_wkkm0")
+autoplay = "default"
+frame_progress = 0.142465
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ltc8a")
+
+[node name="ovatrulantArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ovatrulantArea"]
+shape = SubResource("CapsuleShape2D_ltc8a")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3kxpu")
+volume_db = -5.0
+
+[connection signal="area_entered" from="ovatrulantArea" to="." method="_on_overtrulant_area_area_entered"]

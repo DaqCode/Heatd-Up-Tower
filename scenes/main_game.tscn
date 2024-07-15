@@ -1,0 +1,495 @@
+[gd_scene load_steps=24 format=3 uid="uid://ljkryje6j51q"]
+
+[ext_resource type="Script" path="res://scripts/main_game.gd" id="1_42u12"]
+[ext_resource type="PackedScene" uid="uid://dm4hqicqej2fp" path="res://scenes/turret.tscn" id="1_cwgsg"]
+[ext_resource type="Texture2D" uid="uid://bus2pampmqk4f" path="res://resources/backgroundTower.png" id="1_e37be"]
+[ext_resource type="PackedScene" uid="uid://c2teorjxyphj4" path="res://scenes/taknith_spawn.tscn" id="2_lruoc"]
+[ext_resource type="PackedScene" uid="uid://iqll8yj15o82" path="res://scenes/blothing_spawn.tscn" id="3_xp2fn"]
+[ext_resource type="PackedScene" uid="uid://bdcr767gstl4" path="res://scenes/overtrulant_spawn.tscn" id="5_fwy0d"]
+[ext_resource type="Script" path="res://scripts/Clock.gd" id="7_vgl4p"]
+[ext_resource type="FontFile" uid="uid://brepqfd0s83as" path="res://resources/CabinSketch-Regular.ttf" id="7_x68te"]
+[ext_resource type="Texture2D" uid="uid://bo0qjbi4pq54j" path="res://resources/hearts.png" id="9_kbpy7"]
+[ext_resource type="AudioStream" uid="uid://df0k11g27fqvk" path="res://resources/S.T.A.L.K.E.R..mp3" id="10_uf8rr"]
+[ext_resource type="AudioStream" uid="uid://cg5e0bnudvm72" path="res://resources/explosion.wav" id="11_bknyl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mfd83"]
+bg_color = Color(1, 0, 0, 0.380392)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u3yp4"]
+bg_color = Color(0.745098, 0, 0, 0.321569)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxuy3"]
+bg_color = Color(1, 0, 0, 0.639216)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uqijl"]
+bg_color = Color(0.610974, 1.70864e-06, 3.36915e-07, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pcif0"]
+bg_color = Color(0.576471, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gbdi"]
+bg_color = Color(0, 0, 1, 0.513726)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ca8j"]
+bg_color = Color(0, 0, 1, 0.839216)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gprnv"]
+bg_color = Color(0, 0, 1, 0.47451)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v3855"]
+bg_color = Color(0, 0, 0.533333, 0.411765)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kf3j4"]
+bg_color = Color(0.6, 0.6, 0.6, 0.47451)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7fyi"]
+bg_color = Color(0.6, 0.6, 0.6, 0.713726)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b54yv"]
+radius = 119.004
+
+[node name="MainGame" type="Node2D"]
+position = Vector2(11, 13)
+script = ExtResource("1_42u12")
+
+[node name="GameProperties" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="GameProperties"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -11.0
+offset_top = -12.0
+offset_right = 1490.0
+offset_bottom = 839.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_e37be")
+
+[node name="turret" parent="GameProperties" instance=ExtResource("1_cwgsg")]
+position = Vector2(76, 439)
+
+[node name="Camera2D" type="Camera2D" parent="GameProperties"]
+position = Vector2(739.744, 414.103)
+
+[node name="Spawners" type="Node2D" parent="."]
+
+[node name="taknith_spawn" parent="Spawners" instance=ExtResource("2_lruoc")]
+position = Vector2(1708, -273)
+
+[node name="blothingSpawn" parent="Spawners" instance=ExtResource("3_xp2fn")]
+position = Vector2(1603, -273)
+rotation = 0.0
+
+[node name="ovatrulant_spawn" parent="Spawners" instance=ExtResource("5_fwy0d")]
+position = Vector2(1511, -275)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 90.0
+one_shot = true
+autostart = true
+
+[node name="Clock" type="Node" parent="."]
+script = ExtResource("7_vgl4p")
+
+[node name="Label" type="Label" parent="Clock"]
+offset_left = 6.0
+offset_top = 766.0
+offset_right = 143.0
+offset_bottom = 855.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_x68te")
+theme_override_font_sizes/font_size = 75
+text = "1:30"
+horizontal_alignment = 1
+
+[node name="countdown" type="Timer" parent="Clock"]
+wait_time = 90.0
+one_shot = true
+autostart = true
+
+[node name="Heart1" type="CanvasLayer" parent="."]
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
+
+[node name="Panel" type="Panel" parent="Heart1"]
+custom_minimum_size = Vector2(150, 100)
+offset_left = 19.0
+offset_top = 10.0
+offset_right = 169.0
+offset_bottom = 150.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mfd83")
+metadata/_edit_use_anchors_ = true
+
+[node name="Hearts" type="Sprite2D" parent="Heart1/Panel"]
+position = Vector2(74, 74)
+scale = Vector2(0.758, 0.608)
+texture = ExtResource("9_kbpy7")
+
+[node name="Heart2" type="CanvasLayer" parent="."]
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
+
+[node name="Panel2" type="Panel" parent="Heart2"]
+custom_minimum_size = Vector2(150, 100)
+offset_left = 173.0
+offset_top = 10.0
+offset_right = 323.0
+offset_bottom = 150.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mfd83")
+
+[node name="Hearts" type="Sprite2D" parent="Heart2/Panel2"]
+position = Vector2(74, 74)
+scale = Vector2(0.758, 0.608)
+texture = ExtResource("9_kbpy7")
+
+[node name="Heart3" type="CanvasLayer" parent="."]
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
+
+[node name="Panel3" type="Panel" parent="Heart3"]
+custom_minimum_size = Vector2(150, 100)
+offset_left = 327.0
+offset_top = 10.0
+offset_right = 477.0
+offset_bottom = 150.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mfd83")
+
+[node name="Hearts" type="Sprite2D" parent="Heart3/Panel3"]
+position = Vector2(74, 74)
+scale = Vector2(0.758, 0.608)
+texture = ExtResource("9_kbpy7")
+
+[node name="Loss Screen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="loss" type="Panel" parent="Loss Screen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -565.0
+offset_top = -260.0
+offset_right = 546.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Loss Screen/loss"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.0479452
+anchor_right = 0.5
+anchor_bottom = 0.0479452
+offset_left = -242.5
+offset_right = 242.5
+offset_bottom = 133.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_x68te")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_u3yp4")
+text = "The tower has fallen...
+You've lost control"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Loss Screen/loss"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -498.5
+offset_top = -97.5
+offset_right = 498.5
+offset_bottom = 97.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_x68te")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_u3yp4")
+text = "The tower has unfortunately fallen. You can restart, or succumb. The owner 
+really would appreciate you taking his pains away from his head, but if it must 
+be desired, I suppose  you can stop. 
+
+It's too simply put, simple and boring. But I can assure, he'll try his best, even 
+uner pressure. I'll do my best. -Heat"
+uppercase = true
+
+[node name="Retry" type="Button" parent="Loss Screen/loss"]
+process_mode = 3
+layout_mode = 0
+offset_left = 90.0
+offset_top = 409.0
+offset_right = 475.0
+offset_bottom = 561.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_x68te")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_oxuy3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uqijl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pcif0")
+text = "NEVER GIVE UP!
+RETRY!"
+
+[node name="Menu" type="Button" parent="Loss Screen/loss"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 594.0
+offset_top = 409.0
+offset_right = -133.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_x68te")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_4gbdi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4ca8j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gprnv")
+text = "SUCCUMB TO YOUR WOUNDS...
+MAIN MENU"
+
+[node name="WinScreen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Panel" type="Panel" parent="WinScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.5
+offset_top = -356.0
+offset_right = 600.5
+offset_bottom = 356.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="WinScreen/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -268.0
+offset_top = 21.0
+offset_right = 277.0
+offset_bottom = 118.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_x68te")
+theme_override_font_sizes/font_size = 39
+theme_override_styles/normal = SubResource("StyleBoxFlat_v3855")
+text = "you held out till the end!
+well done!"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="WinScreen/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -502.0
+offset_top = -224.0
+offset_right = 508.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.680358, 2.5389e-06, 5.77569e-07, 1)
+theme_override_fonts/font = ExtResource("7_x68te")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_kf3j4")
+text = "While this may not be enough, Heat is proud of your work that
+ you've performed, regardless. He understands that your commitment 
+to aiding towards his small bit of work through the owners brain is well
+thought of and generous of you to test and complete.
+
+Maybe there could have been more. Points system, upgrades, maybe 
+more enemies or even other creative ideas my owner would have 
+thought. Hopefully he'll be doing well. Meanwhile, I need to get back to this...
+
+If you do like a secret, have a good look out for the menu screen.
+You do deserve it for the work.                                           Signed: Heat"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="winMainMenu" type="Button" parent="WinScreen/Panel"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -381.0
+offset_top = -119.0
+offset_right = 381.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.554554, 0.554554, 0.554554, 1)
+theme_override_fonts/font = ExtResource("7_x68te")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_r7fyi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r7fyi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r7fyi")
+text = "Return to Main Menu"
+
+[node name="pausecanvas" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Panel" type="Panel" parent="pausecanvas"]
+offset_left = 229.0
+offset_top = 128.0
+offset_right = 1274.0
+offset_bottom = 709.0
+
+[node name="Label" type="Label" parent="pausecanvas/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -415.5
+offset_top = -273.5
+offset_right = 416.5
+offset_bottom = -184.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_x68te")
+theme_override_font_sizes/font_size = 75
+text = "PAUSED!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="pausecanvas"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -391.0
+offset_top = -156.0
+offset_right = 392.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_x68te")
+theme_override_font_sizes/font_size = 50
+text = "\"Pressing pause, and stopping time.
+Let the thoughts sink in...\"
+-Unknown Writer
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UnStopTime" type="Button" parent="pausecanvas"]
+process_mode = 3
+offset_left = 316.0
+offset_top = 535.0
+offset_right = 662.0
+offset_bottom = 655.0
+theme_override_fonts/font = ExtResource("7_x68te")
+theme_override_font_sizes/font_size = 35
+text = "Resume!"
+
+[node name="Main Menu" type="Button" parent="pausecanvas"]
+process_mode = 3
+offset_left = 825.0
+offset_top = 536.0
+offset_right = 1177.0
+offset_bottom = 656.0
+theme_override_fonts/font = ExtResource("7_x68te")
+theme_override_font_sizes/font_size = 35
+text = "Back to Main Menu"
+
+[node name="gameCheckerArea" type="Area2D" parent="."]
+position = Vector2(9, 27)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gameCheckerArea"]
+position = Vector2(67, 410)
+shape = SubResource("CircleShape2D_b54yv")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_uf8rr")
+volume_db = -10.0
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_bknyl")
+volume_db = 1.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Loss Screen/loss/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Loss Screen/loss/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="WinScreen/Panel/winMainMenu" to="." method="_on_win_main_menu_pressed"]
+[connection signal="pressed" from="pausecanvas/UnStopTime" to="." method="_on_un_stop_time_pressed"]
+[connection signal="pressed" from="pausecanvas/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="area_entered" from="gameCheckerArea" to="." method="_on_game_checker_area_area_entered"]

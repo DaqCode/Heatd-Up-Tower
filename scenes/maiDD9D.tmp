@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://ljkryje6j51q"]
+
+[ext_resource type="Script" path="res://scripts/main_game.gd" id="1_42u12"]
+[ext_resource type="PackedScene" uid="uid://dm4hqicqej2fp" path="res://scenes/turret.tscn" id="1_cwgsg"]
+[ext_resource type="Texture2D" uid="uid://bus2pampmqk4f" path="res://resources/backgroundTower.png" id="1_e37be"]
+[ext_resource type="PackedScene" uid="uid://c2teorjxyphj4" path="res://scenes/taknith_spawn.tscn" id="2_lruoc"]
+[ext_resource type="PackedScene" uid="uid://iqll8yj15o82" path="res://scenes/blothing_spawn.tscn" id="3_xp2fn"]
+[ext_resource type="PackedScene" uid="uid://bdcr767gstl4" path="res://scenes/overtrulant_spawn.tscn" id="5_fwy0d"]
+
+[node name="MainGame" type="Node2D"]
+script = ExtResource("1_42u12")
+
+[node name="GameProperties" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="GameProperties"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 1500.0
+offset_bottom = 849.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_e37be")
+
+[node name="Camera2D" type="Camera2D" parent="GameProperties"]
+position = Vector2(750, 425)
+
+[node name="turret" parent="GameProperties" instance=ExtResource("1_cwgsg")]
+position = Vector2(74, 415)
+
+[node name="Spawners" type="Node2D" parent="."]
+
+[node name="taknith_spawn" parent="Spawners" instance=ExtResource("2_lruoc")]
+visible = false
+position = Vector2(1674, -276)
+
+[node name="blothingSpawn" parent="Spawners" instance=ExtResource("3_xp2fn")]
+position = Vector2(1596, -275)
+rotation = 0.0
+
+[node name="ovatrulant_spawn" parent="Spawners" instance=ExtResource("5_fwy0d")]
+visible = false
+position = Vector2(1511, -275)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 90.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ljkryje6j51q"]
+
+[ext_resource type="PackedScene" uid="uid://eqy3nrvgfu4u" path="res://scenes/turret.tscn" id="2_ls180"]
+[ext_resource type="Texture2D" uid="uid://cm0ubofnub4v1" path="res://icon.svg" id="3_ys8a4"]
+
+[node name="MainGame" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="turret" parent="." instance=ExtResource("2_ls180")]
+
+[node name="Icon3" type="Sprite2D" parent="turret"]
+texture = ExtResource("3_ys8a4")
+
+[node name="Node2D3" type="Node2D" parent="turret"]
+
+[node name="Marker2D" type="Marker2D" parent="turret/Node2D3"]

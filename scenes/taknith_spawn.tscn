@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2teorjxyphj4"]
+
+[ext_resource type="Script" path="res://scripts/taknith_spawn.gd" id="1_e7wwy"]
+
+[node name="taknith_spawn" type="Node2D"]
+script = ExtResource("1_e7wwy")
+
+[node name="spawnTime" type="Timer" parent="."]
+
+[connection signal="timeout" from="spawnTime" to="." method="_on_spawning_timer_timeout"]

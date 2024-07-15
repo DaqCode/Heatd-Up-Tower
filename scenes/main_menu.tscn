@@ -1,0 +1,365 @@
+[gd_scene load_steps=16 format=3 uid="uid://hfyeisnk732w"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_2lqa1"]
+[ext_resource type="Texture2D" uid="uid://hujqvhllbf55" path="res://resources/HeatTurretMenu.png" id="1_v53ut"]
+[ext_resource type="FontFile" uid="uid://brepqfd0s83as" path="res://resources/CabinSketch-Regular.ttf" id="2_0w35o"]
+[ext_resource type="Texture2D" uid="uid://b2knx5dtmt5yi" path="res://resources/CliffSecret.png" id="4_1y4l1"]
+[ext_resource type="AudioStream" uid="uid://ltyfslxb6raw" path="res://resources/Brave Frontier - Obstacle (320).mp3" id="5_yi3m8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_04jrq"]
+bg_color = Color(0.553698, 0.255383, 0.977857, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fqhb"]
+bg_color = Color(0.732246, 0.697232, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6ku8"]
+bg_color = Color(0.244934, 0.763665, 0.799081, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aijg4"]
+bg_color = Color(0.127591, 0.477185, 0.500574, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1upii"]
+bg_color = Color(0.129412, 0.478431, 0.501961, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbn01"]
+bg_color = Color(0.129412, 0.478431, 0.501961, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0epi"]
+bg_color = Color(0, 0, 0, 0.372549)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtpgi"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ty7pd"]
+bg_color = Color(0, 0.192157, 0.52549, 0.92549)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_osf5n"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_2lqa1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2000.0
+offset_bottom = 1133.0
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_v53ut")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1144.0
+offset_top = 732.0
+offset_right = 1323.0
+offset_bottom = 853.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0w35o")
+theme_override_font_sizes/font_size = 50
+text = "Version:
+1.FINAL"
+
+[node name="NameGame" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 273.0
+offset_top = 26.0
+offset_right = 1165.0
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_04jrq")
+
+[node name="Panel" type="Panel" parent="NameGame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -422.5
+offset_top = -70.5
+offset_right = 422.5
+offset_bottom = 70.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2fqhb")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="NameGame/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -56.5
+offset_right = 200.0
+offset_bottom = 56.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.493393, 0, 0.151725, 1)
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.411765, 0, 0.737255, 1)
+theme_override_fonts/font = ExtResource("2_0w35o")
+theme_override_font_sizes/font_size = 110
+text = "Heat'd Up Tower"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 37.0
+offset_top = 465.0
+offset_right = 509.0
+offset_bottom = 831.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y6ku8")
+
+[node name="start" type="Button" parent="VBoxContainer/Panel"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -213.0
+offset_top = -41.5
+offset_right = 213.0
+offset_bottom = 41.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.223529, 0, 0.552941, 1)
+theme_override_fonts/font = ExtResource("2_0w35o")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_aijg4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1upii")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qbn01")
+text = "Start Game"
+
+[node name="Panel2" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y6ku8")
+
+[node name="question" type="Button" parent="VBoxContainer/Panel2"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -213.0
+offset_top = -41.5
+offset_right = 213.0
+offset_bottom = 41.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.223529, 0, 0.552941, 1)
+theme_override_fonts/font = ExtResource("2_0w35o")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_aijg4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1upii")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qbn01")
+text = "Monster Book"
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel3" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y6ku8")
+
+[node name="questionedtwo" type="Button" parent="VBoxContainer/Panel3"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -39.0
+offset_right = 205.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_0w35o")
+theme_override_font_sizes/font_size = 65
+theme_override_styles/normal = SubResource("StyleBoxFlat_h0epi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h0epi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h0epi")
+text = "What do I do?"
+
+[node name="Secret" type="CanvasLayer" parent="."]
+
+[node name="DaqSecret" type="TextureRect" parent="Secret"]
+offset_left = 92.0
+offset_top = 331.0
+offset_right = 2012.0
+offset_bottom = 1411.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_1y4l1")
+
+[node name="hiddenButton" type="Button" parent="Secret"]
+process_mode = 3
+offset_left = 99.0
+offset_top = 311.0
+offset_right = 165.0
+offset_bottom = 406.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_gtpgi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gtpgi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gtpgi")
+text = "
+ ME"
+
+[node name="whatdoLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Panel" type="Panel" parent="whatdoLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -426.0
+offset_top = -238.0
+offset_right = 951.0
+offset_bottom = 551.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.665, 0.665)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ty7pd")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="whatdoLayer/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.5
+offset_right = 150.5
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_0w35o")
+theme_override_font_sizes/font_size = 70
+text = "What do I do?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="whatdoLayer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -584.0
+offset_top = -325.0
+offset_right = 590.0
+offset_bottom = 302.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_0w35o")
+theme_override_font_sizes/font_size = 35
+text = "So, let's get some things set: You have 3 health, and you've just got to survive. 
+P to pause as well.
+Nothing too serious.
+
+There are 3 enemies to watch out for. 
+One is incredibly fast, and will boost the others.
+One is slightly tanky and will move slower.
+One is much more tanky and will move even slower.
+
+You can hold Space Bar or the Left Mouse Button to hold and fire quickly. 
+Don't worry about making Heat tired, he'll make it through, don't worry.
+
+You only need to get through a minute and thirty seconds.
+Good luck!"
+
+[node name="BackToMenu" type="Button" parent="whatdoLayer/Panel"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -430.5
+offset_top = -97.0
+offset_right = 417.5
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_osf5n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_osf5n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_osf5n")
+text = "You got it? Back to MENU!"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_yi3m8")
+volume_db = -10.576
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/Panel/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Panel2/question" to="." method="_on_question_pressed"]
+[connection signal="pressed" from="VBoxContainer/Panel3/questionedtwo" to="." method="_on_questionedtwo_pressed"]
+[connection signal="pressed" from="Secret/hiddenButton" to="." method="_on_hidden_button_pressed"]
+[connection signal="pressed" from="whatdoLayer/Panel/BackToMenu" to="." method="_on_back_to_menu_pressed"]

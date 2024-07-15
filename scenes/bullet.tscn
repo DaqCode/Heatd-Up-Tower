@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwlptmen28hyi"]
+
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_jxa6o"]
+[ext_resource type="Texture2D" uid="uid://c1xdcrypy7hc5" path="res://resources/bullet.png" id="2_ham2n"]
+
+[node name="bullet" type="CharacterBody2D"]
+light_mask = 2
+visibility_layer = 2
+collision_layer = 4
+script = ExtResource("1_jxa6o")
+
+[node name="Bullet" type="Sprite2D" parent="."]
+position = Vector2(38.8282, -0.19322)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_ham2n")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(65.9115, -0.905928)
+polygon = PackedVector2Array(-47.146, -1.20314, -42.5211, -3.72583, -40.1666, -1.95995, -37.6439, -3.9781, -29.9076, -3.13721, -16.5374, -7.00533, -15.8647, -9.6962, -0.658215, -9.08294, 9.74735, -11.1046, 15.1582, -9.38025, 29.0125, 0.133413, 23.0665, 6.73351, 18.6664, 9.05247, 16.0501, 10.6579, 14.2069, 11.7876, 10.4609, 12.5606, 8.3203, 12.5606, 4.93106, 12.2633, -0.955517, 11.4903, -3.21501, 9.94437, -8.0313, 10.6579, -13.2638, 10.7768, -14.2746, 10.4201, -17.3071, 8.57678, -20.9937, 7.8038, -23.8478, 6.61459, -26.3451, 5.30646, -29.3776, 4.89024, -33.0641, 5.60377, -40.675, 3.58211, -41.7453, 3.16589, -44.5994, 3.40373, -45.7292, 2.51183, -46.9778, 0.252333)
+
+[node name="bulletArea" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="bulletArea"]
+position = Vector2(65.9115, -0.905928)
+polygon = PackedVector2Array(-47.146, -1.20314, -42.5211, -3.72583, -40.1666, -1.95995, -37.6439, -3.9781, -29.9076, -3.13721, -16.5374, -7.00533, -15.8647, -9.6962, -0.658215, -9.08294, 9.74735, -11.1046, 15.1582, -9.38025, 29.0125, 0.133413, 23.0665, 6.73351, 18.6664, 9.05247, 16.0501, 10.6579, 14.2069, 11.7876, 10.4609, 12.5606, 8.3203, 12.5606, 4.93106, 12.2633, -0.955517, 11.4903, -3.21501, 9.94437, -8.0313, 10.6579, -13.2638, 10.7768, -14.2746, 10.4201, -17.3071, 8.57678, -20.9937, 7.8038, -23.8478, 6.61459, -26.3451, 5.30646, -29.3776, 4.89024, -33.0641, 5.60377, -40.675, 3.58211, -41.7453, 3.16589, -44.5994, 3.40373, -45.7292, 2.51183, -46.9778, 0.252333)
+
+[node name="despawn" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="area_entered" from="bulletArea" to="." method="_on_bullet_area_area_entered"]
+[connection signal="timeout" from="despawn" to="." method="_on_despawn_timeout"]

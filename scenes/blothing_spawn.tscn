@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://iqll8yj15o82"]
+
+[ext_resource type="Script" path="res://scripts/blothingSpawn.gd" id="1_m3rsc"]
+
+[node name="blothingSpawn" type="Node2D"]
+rotation = 3.14159
+script = ExtResource("1_m3rsc")
+
+[node name="spawnTime" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="spawnTime" to="." method="_on_spawn_time_timeout"]

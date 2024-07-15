@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://dguue4qyl0w0d"]
+
+[ext_resource type="Script" path="res://scripts/taknith.gd" id="1_lqovf"]
+[ext_resource type="Texture2D" uid="uid://dlouf7phhlc07" path="res://resources/taknithframe.png" id="2_ca1ae"]
+[ext_resource type="AudioStream" uid="uid://ur3x2huejk5v" path="res://resources/hitHurt (1).wav" id="3_t88mq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpdfu"]
+atlas = ExtResource("2_ca1ae")
+region = Rect2(0, 7, 125, 193)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45uu2"]
+atlas = ExtResource("2_ca1ae")
+region = Rect2(125, 7, 125, 193)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1a4ps"]
+atlas = ExtResource("2_ca1ae")
+region = Rect2(250, 7, 125, 193)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nv7l"]
+atlas = ExtResource("2_ca1ae")
+region = Rect2(375, 7, 125, 193)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qt0lr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpdfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45uu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1a4ps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nv7l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bmtun"]
+radius = 48.0
+height = 130.0
+
+[node name="taknith" type="CharacterBody2D"]
+texture_filter = 1
+scale = Vector2(1.1, 1.1)
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("1_lqovf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.95, 0.95)
+sprite_frames = SubResource("SpriteFrames_qt0lr")
+autoplay = "default"
+frame_progress = 0.269791
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, -1)
+scale = Vector2(0.95, 0.95)
+shape = SubResource("CapsuleShape2D_bmtun")
+
+[node name="taknithArea" type="Area2D" parent="."]
+scale = Vector2(0.95, 0.95)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="taknithArea"]
+position = Vector2(-5, -1)
+scale = Vector2(0.95, 0.95)
+shape = SubResource("CapsuleShape2D_bmtun")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_t88mq")
+volume_db = -5.0
+
+[connection signal="area_entered" from="taknithArea" to="." method="_on_taknith_area_area_entered"]

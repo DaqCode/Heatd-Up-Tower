@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://boorxfpo7q20h"]
+
+[ext_resource type="Script" path="res://scripts/enemies.gd" id="1_bmqiq"]
+[ext_resource type="Texture2D" uid="uid://co6dn1625iyg6" path="res://resources/blothingframes.png" id="2_nq457"]
+[ext_resource type="AudioStream" uid="uid://ur3x2huejk5v" path="res://resources/hitHurt (1).wav" id="3_s5061"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhmx3"]
+atlas = ExtResource("2_nq457")
+region = Rect2(0, 0, 100, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2x64"]
+atlas = ExtResource("2_nq457")
+region = Rect2(100, 0, 100, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqrim"]
+atlas = ExtResource("2_nq457")
+region = Rect2(200, 0, 100, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0f8d"]
+atlas = ExtResource("2_nq457")
+region = Rect2(300, 0, 100, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43kcm"]
+atlas = ExtResource("2_nq457")
+region = Rect2(400, 0, 100, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uo6nr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhmx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2x64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqrim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0f8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43kcm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5g1mj"]
+radius = 31.0
+height = 128.0
+
+[node name="enemies" type="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(17, 18)
+scale = Vector2(0.75, 0.75)
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("1_bmqiq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uo6nr")
+autoplay = "default"
+frame_progress = 0.628316
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 0)
+shape = SubResource("CapsuleShape2D_5g1mj")
+
+[node name="enemyArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyArea"]
+z_index = 1
+position = Vector2(-6, 0)
+shape = SubResource("CapsuleShape2D_5g1mj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_s5061")
+volume_db = -5.0
+
+[connection signal="area_entered" from="enemyArea" to="." method="_on_area_2d_area_entered"]

@@ -1,0 +1,447 @@
+[gd_scene load_steps=14 format=3 uid="uid://bvrftsjobsiby"]
+
+[ext_resource type="Script" path="res://scripts/what_do.gd" id="1_4lg16"]
+[ext_resource type="Texture2D" uid="uid://dr14tywe27v5f" path="res://resources/page1.png" id="1_f3b3i"]
+[ext_resource type="FontFile" uid="uid://c7s28h46t1vol" path="res://resources/bloodcrow.ttf" id="2_pavr0"]
+[ext_resource type="Texture2D" uid="uid://d0601rnhbiaaa" path="res://resources/ovatruulant.png" id="3_8dg7x"]
+[ext_resource type="Texture2D" uid="uid://c2qjmhdaql8bt" path="res://resources/blothing.png" id="4_qf5sq"]
+[ext_resource type="FontFile" uid="uid://brepqfd0s83as" path="res://resources/CabinSketch-Regular.ttf" id="5_0vrxp"]
+[ext_resource type="Texture2D" uid="uid://b3qu40q11d6ht" path="res://resources/taknith.png" id="5_fvs5f"]
+[ext_resource type="AudioStream" uid="uid://bfx07rqqsec5u" path="res://resources/Brave Frontier - Lone Strength (320).mp3" id="8_u3bco"]
+[ext_resource type="AudioStream" uid="uid://c3vi56mrhgkqe" path="res://resources/page-flip-47177.mp3" id="9_lhsia"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1sn2j"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7rqeg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdffh"]
+bg_color = Color(0.6, 0.6, 0.254902, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vyswe"]
+bg_color = Color(0.286275, 0, 0, 0.396078)
+
+[node name="whatDo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4lg16")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1501.0
+offset_bottom = 846.0
+texture = ExtResource("1_f3b3i")
+
+[node name="ovatrulant" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="ovatrulant"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 196.0
+offset_right = 635.0
+offset_bottom = 747.0
+
+[node name="Label" type="Label" parent="ovatrulant/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.5
+offset_top = -133.0
+offset_right = 217.5
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_pavr0")
+theme_override_font_sizes/font_size = 67
+text = "Ovatrulant"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ovatrulant/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -224.5
+offset_top = -304.0
+offset_right = 222.5
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_pavr0")
+theme_override_font_sizes/font_size = 25
+text = "A fast monster. He moves more quickly 
+than my owner can catch. A very quick 
+glimpse is all I can obtain from this
+sight.
+
+He has the temptation to make others 
+speed up with hiim. Take care of them.
+There are a LOT of them as well. Will
+be cumbersome to take care of.
+"
+
+[node name="Panel2" type="Panel" parent="ovatrulant"]
+layout_mode = 0
+offset_left = 932.0
+offset_top = 192.0
+offset_right = 1363.0
+offset_bottom = 731.0
+
+[node name="Label2" type="Label" parent="ovatrulant/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = 11.0
+offset_right = 23.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_pavr0")
+theme_override_font_sizes/font_size = 26
+text = "Journal Entry 42:
+\"I feel light. After my test, I felt
+another surge of an adrenaline 
+rush of some sort.
+
+I didn't feel well, that's for sure. 
+I felt pain through my chest, my
+stomach, and felt like collapsing.
+
+It's almost as if I felt something 
+chasing my life away, and making
+me tired pointlessly and effort-
+lessly. I don't know what to do. 
+It's a long, rough, day today...
+-Daq_Vid"
+
+[node name="TextureRect" type="TextureRect" parent="ovatrulant"]
+modulate = Color(0.619608, 0.501961, 0.698039, 1)
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 328.0
+offset_top = 206.0
+offset_right = 912.0
+offset_bottom = 810.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_8dg7x")
+
+[node name="nextPage" type="Button" parent="ovatrulant"]
+process_mode = 3
+layout_mode = 0
+offset_left = 1315.1
+offset_top = 789.063
+offset_right = 1487.1
+offset_bottom = 836.063
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_0vrxp")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_1sn2j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7rqeg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vdffh")
+text = "Next Page"
+
+[node name="Blothing" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Blothing"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 180.0
+offset_right = 648.0
+offset_bottom = 761.0
+
+[node name="Label" type="Label" parent="Blothing/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -161.5
+offset_right = 144.0
+offset_bottom = -72.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_pavr0")
+theme_override_font_sizes/font_size = 67
+text = "Blothing"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Blothing/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -387.0
+offset_right = 202.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_pavr0")
+theme_override_font_sizes/font_size = 26
+text = "A purple mass-looking monster. It
+seems to possess much more threat 
+than most other monsters, but it's 
+looks as if it'll travel slower.
+
+He seems to be the main cause of my
+owners depression, making him feel 
+empy in his heart. Must take care
+ASAP.
+
+He sounds like he's crying..."
+
+[node name="Panel2" type="Panel" parent="Blothing"]
+layout_mode = 0
+offset_left = 918.0
+offset_top = 189.0
+offset_right = 1377.0
+offset_bottom = 745.0
+
+[node name="Label2" type="Label" parent="Blothing/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -226.0
+offset_top = -278.5
+offset_right = 226.0
+offset_bottom = 278.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_pavr0")
+theme_override_font_sizes/font_size = 27
+text = "Journal Entry 29:
+\"After a long day, and a longer 
+talk with [REDACTED], I think I
+really am the problem. I never do
+anything right with her. I always
+think everything is my fault. Is
+ anything I do always going to
+be a waste? Am I really just a piece
+of [REDACTED]. 
+
+I'm more surprised [REDACTED] has
+more faith in me, even though I have
+done nothing good to her. She's a 
+great person, but she doesn't deserve
+me. There's always someone better.\"
+-Daq_Vid
+"
+
+[node name="TextureRect" type="TextureRect" parent="Blothing"]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 192.0
+offset_right = 914.0
+offset_bottom = 736.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_qf5sq")
+
+[node name="nextPage2" type="Button" parent="Blothing"]
+process_mode = 3
+layout_mode = 0
+offset_left = 1321.0
+offset_top = 796.0
+offset_right = 1493.0
+offset_bottom = 843.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_0vrxp")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_1sn2j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7rqeg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vdffh")
+text = "Next Page"
+
+[node name="backButton" type="Button" parent="Blothing"]
+process_mode = 3
+layout_mode = 0
+offset_left = 8.0
+offset_top = 798.0
+offset_right = 180.0
+offset_bottom = 845.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_0vrxp")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_1sn2j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7rqeg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vdffh")
+text = "Back Page"
+
+[node name="Taknith" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Taknith"]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 176.0
+offset_right = 645.0
+offset_bottom = 755.0
+
+[node name="Label" type="Label" parent="Taknith/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -158.5
+offset_top = -464.0
+offset_right = 126.5
+offset_bottom = -375.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_pavr0")
+theme_override_font_sizes/font_size = 62
+text = "Taknith"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Taknith/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -205.5
+offset_top = -399.0
+offset_right = 210.5
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_pavr0")
+theme_override_font_sizes/font_size = 25
+text = "More coherent than blothing. It's
+Much, much massive than the others,
+looks like it'll take a beating be-
+fore it succumbs to its wounds. 
+
+Owner feels less freedom and more 
+alone, and admits it's a combination
+of both Blothing and Ovatrulant.
+
+He kept rambling about how 
+[REDACTED] keeps him awake, and 
+Taknith seems to fuel that thought."
+
+[node name="Panel2" type="Panel" parent="Taknith"]
+layout_mode = 0
+offset_left = 914.0
+offset_top = 181.0
+offset_right = 1386.0
+offset_bottom = 752.0
+
+[node name="Label2" type="Label" parent="Taknith/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 3.0
+offset_right = 14.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_pavr0")
+theme_override_font_sizes/font_size = 27
+text = "Journal Entry 14:
+\"It's over. I feel no hope anymore.
+I think this probably the most close
+that I felt to hopelessness.
+
+Studying for so long, yet having no 
+proof of my own showings applied; I
+think it's over for me.
+
+Is this really what hopelessness 
+fells like? Do I have nothing worth
+for my life to be alive for?
+
+Maybe [Redacted], but it'll feel less
+protective of my own soul.\"
+-Daq_Vid"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Taknith"]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 188.0
+offset_right = 831.0
+offset_bottom = 688.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_fvs5f")
+
+[node name="backButton2" type="Button" parent="Taknith"]
+process_mode = 3
+layout_mode = 0
+offset_left = 15.0
+offset_top = 798.0
+offset_right = 187.0
+offset_bottom = 845.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_0vrxp")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_1sn2j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7rqeg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vdffh")
+text = "Back Page"
+
+[node name="BackUp" type="Button" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 12.0
+offset_top = 13.0
+offset_right = 98.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_pavr0")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_vyswe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vyswe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vyswe")
+text = "X"
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_u3bco")
+volume_db = -10.0
+autoplay = true
+
+[node name="pageturning" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_lhsia")
+volume_db = -15.0
+pitch_scale = 1.5
+
+[connection signal="pressed" from="ovatrulant/nextPage" to="." method="_on_next_page_pressed"]
+[connection signal="pressed" from="Blothing/nextPage2" to="." method="_on_next_page_2_pressed"]
+[connection signal="pressed" from="Blothing/backButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Taknith/backButton2" to="." method="_on_back_button_2_pressed"]
+[connection signal="pressed" from="BackUp" to="." method="_on_back_up_pressed"]
