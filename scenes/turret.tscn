@@ -29,6 +29,7 @@ position = Vector2(-3, 2)
 shape = SubResource("CircleShape2D_bgpaa")
 
 [node name="Marker" type="Node2D" parent="."]
+position = Vector2(1, -17)
 
 [node name="Marker2D" type="Marker2D" parent="Marker"]
 
